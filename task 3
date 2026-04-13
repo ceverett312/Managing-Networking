@@ -1,0 +1,13 @@
+Determine the current active zone. Add and activate a permanent rule to allow HTTP traffic on port 80, and then add a runtime rule for traffic intended for TCP port 443.
+Add a permanent rule to the internal zone for TCP port range 5901 to 5910. Confirm the changes and display the contents of the affected zone files. Switch the default zone to the internal zone and activate it.
+
+# firewall-cmd --get-default-zone
+# firewall-cmd --add-service=http --permanent		 
+# firewall-cmd --add-port=443/tcp		
+# firewall-cmd --add-port=5901-5910/tcp --zone=internal --permanent 
+# firewall-cmd --reload
+# firewall-cmd --list-all --zone=internal	
+# vim /etc/firewalld/zones/name_zone.xml	
+# firewall-cmd --set-default-zone=internal 
+# firewall-cmd --reload 
+# firewall-cmd --get-active-zones
