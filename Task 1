@@ -1,0 +1,16 @@
+Task 1 :
+Create a connection profile for the new network interface on server using a text editing tool. Assign the IP 192.168.0.170/24 with gateway 192.168.0.1 and set it to autoactivate at system reboots. Deactivate and reactive this interface at the command prompt.
+
+# vim /etc/sysconfig/network-scripts/ifcfg-eth1
+## The config file is a KEY=value pair 
+TYPE=ethernet 
+BOOTPROTO=none
+ONBOOT=yes
+IPADDR=192.168.0.170
+GATEWAY=192.168.0.1
+PREFIX=24
+DEVICE=eth1
+
+# ifup eth1
+# nmcli con sh 
+# ip a s 
