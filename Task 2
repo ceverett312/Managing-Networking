@@ -1,0 +1,9 @@
+Task 2 :
+Create a connection profile using the nmcli command for the new network interface that was added to server2. Assign the IP 192.168.0.150/24
+with gateway 192.168.0.1, and set it to autoactivate at system reboot. Deactivate and reactivate this interface at the command prompt.
+
+
+# nmcli con add type ethernet ifname eth1 ipv4.addresses 192.168.0.150 ipv4.gateway 172.10.10.1 autoconnect yes 
+# nmcli con down name_con
+# nmcli con up name_con
+
